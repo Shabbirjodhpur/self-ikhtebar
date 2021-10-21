@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Self assessment</title>
+</head>
+  
+<body>
+    <div>
+        <p>single juz</p>
+        <input type="text" name="" id="singlejuz" placeholder="enter juz">
+        <input type="text" name="" id="singlejuz_blocksize" placeholder="block size">
+        <!-- <input type="button" value="" > -->
+        <button onclick="juzselected(1)">Generate Questions</button>
+        <hr>
+    </div>
+    <div style="display:none;">
+        <p>multiple juz</p>
+        <input type="text" name="" id="multiplefirstjuz" placeholder="enter first juz">
+        <input type="text" name="" id="multiplelastjuz" placeholder="enter last juz">
+        <input type="text" name="" id="multiplejuz_blocksize" placeholder="block size">
+        <input type="button" value="" onclick="juzselected(2)">
+        <hr>
+    </div> 
+    <div style="display:none;">
+        <p>surah wise</p>
+        <input type="text" name="" id="surahfirst" placeholder="enter first surat number">
+        <input type="text" name="" id="ayatfirst" placeholder="enter ayat number of first surat">
+        <input type="text" name="" id="surahlast" placeholder="enter last surat number">
+        <input type="text" name="" id="ayatlast" placeholder="enter ayat number of last surat">
+        <input type="text" name="" id="surahwise_blocksize" placeholder="block size">
+        <input type="button" value="" onclick="surahwise()">
+        <hr>
+    </div>
+    <div style="display: none;">
+        <p>surah start: <span id="dom_surahstart"></span></p>
+        <p>ayat start:  <span id="dom_ayatstart"></span></p>
+        <p>surah end:  <span id="dom_surahend"></span></p>
+        <p>ayat end:  <span id="dom_ayatend"></span></p>
+        <hr>
+    </div>
+    <div style="display: none;">
+        <p>start:  <span id="start"></span></p>
+        <p>width:  <span id="width"></span></p>
+        <hr>
+    </div>
+    <div style="display: none;">
+        <p>block:   <span id="dom_block"></span></p>
+        <hr>
+    </div>
+    <div>
+        <div id="buttons"></div>
+        <div id="question" style="background-color:whitesmoke;padding: 2em;">
+            <p id="question_read"></p>
+            <p id="question_content"></p>
+            <audio controls id="question_audio" src="../quran_json/source/audio/001/001.mp3">
+            </audio>
+        </div>
+        <button id="show_answer">Show answers</button>
+        <div id="answer" style="background-color: whitesmoke;padding: 1em;">
+            <p>Surat:<span id="surah"></span></p>
+            <p>Ayat:<span id="ayat"></span></p>
+            <p>Page Number:<span id="pageNumber"></span></p>
+            <div id="answer_content"></div>
+            <button id="right" onclick="rightClicked()">Right</button>
+            <button id="wrong" onclick="wrongClicked()">Wrong</button>
+        </div>
+    </div>
+</body>
+
+<script defer src="pageData.js"></script>
+<script src="quran.js"></script>
+<script src="BlockLogic.js"></script>
+<script src="QuestionArrayMaker.js"></script>
+<script defer src="Buttons.js"></script>
+<script defer src="index.js"></script>
+</html>
