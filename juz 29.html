@@ -5,8 +5,13 @@
 <p id="block"></p>
 <script src="quran.js"></script>
 <script>
-let sum  = quran_majeed[5241].content
-sum+= quran_majeed[5671].content
+let sum  = "";
+
+for(let i=5241;i<=5671;i++){
+sum+= quran_majeed[i].content;
+sum+= "*";
+}
+
 
 document.getElementById("block").innerText = sum;
 </script>
